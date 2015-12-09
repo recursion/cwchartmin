@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "cryptowatchFixer",
+  "description": "Makes some custom changes to the cryptowatch site for ease of use.",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_popup": "src/html/config.html",
+    "default_title": "cwf"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "content_scripts": [
+    {
+
+      "matches": [
+        "https://cryptowat.ch/*"
+      ],
+
+      "css": ["src/main.css"],
+
+      "js": ["src/index.js"],
+
+      "run_at": "document_idle"
+    }
+  ]
+}
